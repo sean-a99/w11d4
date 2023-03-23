@@ -5,6 +5,7 @@ import './index.css';
 import App from './App';
 import configureStore from './store';
 import { Provider } from 'react-redux';
+import { populateProduce } from './store/produce';
 
 const theStore = configureStore();
 
@@ -28,5 +29,6 @@ ReactDOM.render(
 
 if (process.env.NODE_ENV !== "production") {
   window.winStore = theStore;
+  console.log('hi michael')
+  window.populateProduce = populateProduce;
 };
-console.log('hi michael')

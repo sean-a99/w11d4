@@ -1,8 +1,13 @@
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
+import produceReducer from './produce';
+// import { populateProduce } from './produce';
 
-const rootReducer = combineReducers({})
+const rootReducer = combineReducers({
+  produce: produceReducer
+})
 
 let enhancer;
+
 
 if (process.env.NODE_ENV !== "production") {
   const logger = require("redux-logger").default;

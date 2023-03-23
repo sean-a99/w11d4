@@ -16,6 +16,10 @@ function cartReducer(prevState={}, action) {
             }
             return state;
 
+        case REMOVE_ITEM:
+            delete state[action.itemId];
+            return state;
+
         default:
             return state;
     }
@@ -23,11 +27,17 @@ function cartReducer(prevState={}, action) {
 
 const RECEIVE_ITEM = "RECEIVE_ITEM"
 
+const REMOVE_ITEM = 'REMOVE_ITEM'
+
 export const receiveItem = (item) => ({
     type: RECEIVE_ITEM, 
     item
 });
 
+export const removeItem = (itemId) => ({
+    type: REMOVE_ITEM,
+    itemId
+})
 
 
 export default cartReducer;
